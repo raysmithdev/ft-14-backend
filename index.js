@@ -20,7 +20,11 @@ app.use(
     })
 );
 
-function runServer(port = PORT) {
+app.get('/data', (req, res) => {
+  res.json({msg: 'Wohoooo'})
+})
+
+const runServer = (port = PORT) => {
     const server = app
         .listen(port, () => {
             console.info(`App listening on port ${server.address().port}`);
